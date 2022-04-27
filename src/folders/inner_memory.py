@@ -1,6 +1,4 @@
-from src.commands import cat, echo, exit, pwd, wc
-
-from src.errors.errors import NoVariableInMemory
+from src.commands import cat, echo, exit, pwd, wc, grep
 
 
 class VarMemory:
@@ -35,6 +33,7 @@ class InnerCommands:
         self.commands['exit'] = exit.Exit_inner
         self.commands['pwd'] = pwd.Pwd_inner
         self.commands['wc'] = wc.Wc_inner
+        self.commands['grep'] = grep.Grep_inner
 
     def __setitem__(self, name, func):
         self.commands[name] = func
